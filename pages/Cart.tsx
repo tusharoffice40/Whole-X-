@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { useApp } from '../App.tsx';
+import { useApp } from '../context/AppContext.tsx';
 import { Order } from '../types.ts';
 
 const Cart: React.FC = () => {
@@ -42,7 +41,7 @@ const Cart: React.FC = () => {
         <p className="text-gray-500 mb-8 max-w-md mx-auto">Browse our marketplace to find high-quality wholesale inventory for your business.</p>
         <button 
           onClick={() => setCurrentPage('shop')}
-          className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all"
+          className="px-8 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all"
         >
           Start Shopping
         </button>
@@ -63,7 +62,7 @@ const Cart: React.FC = () => {
               </div>
               <div className="flex-grow text-center sm:text-left">
                 <h3 className="text-lg font-bold text-gray-900 mb-1">{item.name}</h3>
-                <p className="text-xs text-indigo-500 font-bold uppercase tracking-widest mb-2">{item.category}</p>
+                <p className="text-xs text-blue-500 font-bold uppercase tracking-widest mb-2">{item.category}</p>
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-sm">
                   <span className="text-gray-500">Price: <span className="font-bold text-gray-900">${item.price}</span></span>
                   <span className="text-gray-500">MOQ: <span className="font-bold text-gray-900">{item.moq}</span></span>
@@ -72,7 +71,7 @@ const Cart: React.FC = () => {
               <div className="flex flex-col items-center sm:items-end space-y-4">
                 <div className="text-right">
                   <p className="text-xs text-gray-400 font-bold uppercase tracking-tighter">Item Total</p>
-                  <p className="text-xl font-bold text-indigo-600">${(item.price * item.quantity).toLocaleString()}</p>
+                  <p className="text-xl font-bold text-blue-600">${(item.price * item.quantity).toLocaleString()}</p>
                   <p className="text-[10px] text-gray-400 font-medium">({item.quantity} units)</p>
                 </div>
                 <button 
@@ -112,12 +111,12 @@ const Cart: React.FC = () => {
               </div>
               <div className="pt-4 border-t border-gray-100 flex justify-between">
                 <span className="text-xl font-bold text-gray-900">Total</span>
-                <span className="text-2xl font-bold text-indigo-600">${total.toLocaleString()}</span>
+                <span className="text-2xl font-bold text-blue-600">${total.toLocaleString()}</span>
               </div>
             </div>
 
-            <div className="bg-indigo-50 p-4 rounded-2xl mb-8 border border-indigo-100">
-              <div className="flex items-center space-x-3 text-indigo-700">
+            <div className="bg-blue-50 p-4 rounded-2xl mb-8 border border-blue-100">
+              <div className="flex items-center space-x-3 text-blue-700">
                 <i className="fa-solid fa-circle-info"></i>
                 <p className="text-xs font-semibold">Bulk discount of 5% applied for orders over $10,000.</p>
               </div>
@@ -125,7 +124,7 @@ const Cart: React.FC = () => {
 
             <button 
               onClick={handleCheckout}
-              className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center"
+              className="w-full py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-blue-100 hover:bg-blue-700 transition-all hover:-translate-y-1 active:scale-95 flex items-center justify-center"
             >
               Complete Wholesale Order
               <i className="fa-solid fa-arrow-right ml-3"></i>

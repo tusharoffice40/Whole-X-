@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { useApp } from '../App.tsx';
+import { useApp } from '../context/AppContext.tsx';
 import { CATEGORIES, MOCK_PRODUCTS } from '../constants.tsx';
 
 const Home: React.FC = () => {

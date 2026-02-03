@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { useApp } from '../App.tsx';
+import { useApp } from '../context/AppContext.tsx';
 import { UserRole } from '../types.ts';
 
 const Auth: React.FC = () => {

@@ -1,6 +1,5 @@
-
 import React, { useState, useMemo } from 'react';
-import { useApp } from '../App.tsx';
+import { useApp } from '../context/AppContext.tsx';
 import { MOCK_PRODUCTS, CATEGORIES } from '../constants.tsx';
 
 const Shop: React.FC = () => {

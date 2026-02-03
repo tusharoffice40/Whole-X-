@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { useApp } from '../App.tsx';
+import { useApp } from '../context/AppContext.tsx';
 
 const Navbar: React.FC = () => {
   const { user, cart, setCurrentPage, currentPage } = useApp();
@@ -18,7 +17,7 @@ const Navbar: React.FC = () => {
             className="flex items-center space-x-2 cursor-pointer group" 
             onClick={() => setCurrentPage('home')}
           >
-            <div className="bg-brand-600 text-white p-1.5 rounded transition-transform group-hover:scale-105">
+            <div className="bg-blue-600 text-white p-1.5 rounded transition-transform group-hover:scale-105">
               <i className="fa-solid fa-store"></i>
             </div>
             <span className="text-xl font-bold tracking-tight text-slate-900">WholeX</span>
@@ -28,20 +27,20 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => setCurrentPage('home')}
-              className={`text-sm font-semibold transition-colors ${currentPage === 'home' ? 'text-brand-600' : 'text-slate-500 hover:text-slate-800'}`}
+              className={`text-sm font-semibold transition-colors ${currentPage === 'home' ? 'text-blue-600' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Home
             </button>
             <button 
               onClick={() => setCurrentPage('shop')}
-              className={`text-sm font-semibold transition-colors ${currentPage === 'shop' ? 'text-brand-600' : 'text-slate-500 hover:text-slate-800'}`}
+              className={`text-sm font-semibold transition-colors ${currentPage === 'shop' ? 'text-blue-600' : 'text-slate-500 hover:text-slate-800'}`}
             >
               Marketplace
             </button>
             {user && (
               <button 
                 onClick={() => setCurrentPage('dashboard')}
-                className={`text-sm font-semibold transition-colors ${currentPage === 'dashboard' ? 'text-brand-600' : 'text-slate-500 hover:text-slate-800'}`}
+                className={`text-sm font-semibold transition-colors ${currentPage === 'dashboard' ? 'text-blue-600' : 'text-slate-500 hover:text-slate-800'}`}
               >
                 Dashboard
               </button>
@@ -52,7 +51,7 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-5">
             <button 
               onClick={() => setCurrentPage('cart')}
-              className="relative p-2 text-slate-500 hover:text-brand-600 transition-colors"
+              className="relative p-2 text-slate-500 hover:text-blue-600 transition-colors"
               title="Shopping Cart"
             >
               <i className="fa-solid fa-cart-shopping text-lg"></i>
@@ -69,14 +68,14 @@ const Navbar: React.FC = () => {
                   <p className="text-xs font-bold text-slate-900 leading-none">{user.name}</p>
                   <p className="text-[10px] text-slate-400 font-bold uppercase mt-1 tracking-wider">{user.role}</p>
                 </div>
-                <div className="h-9 w-9 rounded-full bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-700 font-bold text-sm shadow-sm">
+                <div className="h-9 w-9 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm shadow-sm">
                   {user.name.charAt(0)}
                 </div>
               </div>
             ) : (
               <button 
                 onClick={() => setCurrentPage('auth')}
-                className="bg-brand-600 text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-brand-700 transition-all shadow-sm active:scale-95"
+                className="bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-bold hover:bg-blue-700 transition-all shadow-sm active:scale-95"
               >
                 Business Login
               </button>
@@ -103,7 +102,7 @@ const Navbar: React.FC = () => {
           <button onClick={() => { setCurrentPage('dashboard'); setIsMobileMenuOpen(false); }} className="block w-full text-left font-semibold text-slate-700">Dashboard</button>
           <button onClick={() => { setCurrentPage('cart'); setIsMobileMenuOpen(false); }} className="block w-full text-left font-semibold text-slate-700">Cart ({cartItemCount})</button>
           <div className="pt-4">
-            <button onClick={() => { setCurrentPage('auth'); setIsMobileMenuOpen(false); }} className="w-full bg-brand-600 text-white py-3 rounded-lg font-bold">Sign In</button>
+            <button onClick={() => { setCurrentPage('auth'); setIsMobileMenuOpen(false); }} className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold">Sign In</button>
           </div>
         </div>
       )}

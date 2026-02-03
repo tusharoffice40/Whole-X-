@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { useApp } from '../App.tsx';
+import { useApp } from '../context/AppContext.tsx';
 import { MOCK_PRODUCTS } from '../constants.tsx';
 import { generateProductDescription, getMarketInsight } from '../services/gemini.ts';
 
