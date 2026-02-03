@@ -5,23 +5,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WholeX | B2B Wholesale Marketplace</title>
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background-color: #f9fafb;
+  
+  <script>
+    // Intermediate developer: explicit configuration for brand colors and fonts
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          }
+        }
+      }
     }
-    .standard-card-hover {
-      transition: all 0.2s ease-in-out;
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer base {
+      body { 
+        @apply bg-slate-50 text-slate-900 antialiased;
+      }
     }
-    .standard-card-hover:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    @layer components {
+      /* Clean, standard component styles */
+      .standard-card-hover {
+        @apply transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-md border border-slate-200 bg-white;
+      }
+      .btn-primary {
+        @apply bg-brand-600 text-white px-4 py-2 rounded font-semibold hover:bg-brand-700 transition-colors shadow-sm;
+      }
+      .btn-outline {
+        @apply border border-slate-300 text-slate-700 px-4 py-2 rounded font-semibold hover:bg-slate-50 transition-colors;
+      }
     }
   </style>
-<script type="importmap">
+
+  <!-- Clean Import Map: Fixed overlap issue that caused blank pages -->
+  <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@19.0.0",
@@ -34,9 +69,9 @@
 }
 </script>
 </head>
-<body class="text-gray-900">
+<body>
   <div id="root"></div>
-  <!-- Explicitly loading the entry point module -->
+  <!-- Root entry point for the application -->
   <script type="module" src="./index.tsx"></script>
 </body>
 </html>
