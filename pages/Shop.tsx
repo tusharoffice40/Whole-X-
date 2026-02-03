@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
-import { useApp } from '../App';
-import { MOCK_PRODUCTS, CATEGORIES } from '../constants';
+import { useApp } from '../App.tsx';
+import { MOCK_PRODUCTS, CATEGORIES } from '../constants.tsx';
 
 const Shop: React.FC = () => {
   const { setSelectedProductId, setCurrentPage } = useApp();

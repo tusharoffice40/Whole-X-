@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { useApp } from '../App';
-import { UserRole } from '../types';
+import { useApp } from '../App.tsx';
+import { UserRole } from '../types.ts';
 
 const Dashboard: React.FC = () => {
   const { user, orders } = useApp();
@@ -24,7 +24,6 @@ const Dashboard: React.FC = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Navigation Sidebar */}
         <aside className="w-full md:w-64 flex-shrink-0">
           <div className="bg-white rounded border border-gray-200 overflow-hidden">
             <div className="p-6 border-b border-gray-100 bg-gray-50">
@@ -56,7 +55,6 @@ const Dashboard: React.FC = () => {
           </div>
         </aside>
 
-        {/* Content Panel */}
         <main className="flex-grow">
           {tab === 'overview' && (
             <div className="space-y-6">
@@ -69,17 +67,6 @@ const Dashboard: React.FC = () => {
                   <p className="text-xs font-bold text-gray-400 uppercase mb-2">Total Orders</p>
                   <h3 className="text-2xl font-bold text-gray-900">{orders.length}</h3>
                 </div>
-                <div className="bg-white p-6 rounded border border-gray-200 shadow-sm">
-                  <p className="text-xs font-bold text-gray-400 uppercase mb-2">Loyalty Points</p>
-                  <h3 className="text-2xl font-bold text-blue-600">1,250 XP</h3>
-                </div>
-              </div>
-
-              <div className="bg-white rounded border border-gray-200 overflow-hidden">
-                <div className="p-4 border-b border-gray-100 font-bold text-gray-900">Recent Notifications</div>
-                <div className="p-6 text-center text-gray-400 text-sm italic">
-                  No new notifications at this time.
-                </div>
               </div>
             </div>
           )}
@@ -88,7 +75,6 @@ const Dashboard: React.FC = () => {
             <div className="bg-white rounded border border-gray-200 overflow-hidden">
               <div className="p-4 border-b border-gray-100 flex justify-between items-center">
                 <span className="font-bold text-gray-900">Your Order History</span>
-                <button className="text-xs font-bold text-blue-600 hover:underline">Download CSV</button>
               </div>
               {orders.length > 0 ? (
                 <div className="overflow-x-auto">

@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { useApp } from '../App';
-import { Order } from '../types';
+import { useApp } from '../App.tsx';
+import { Order } from '../types.ts';
 
 const Cart: React.FC = () => {
   const { cart, removeFromCart, clearCart, user, addOrder, setCurrentPage } = useApp();
@@ -55,7 +55,6 @@ const Cart: React.FC = () => {
       <h1 className="text-4xl font-bold text-gray-900 mb-12">Bulk Purchase Cart</h1>
       
       <div className="grid lg:grid-cols-3 gap-12">
-        {/* Cart Items */}
         <div className="lg:col-span-2 space-y-6">
           {cart.map(item => (
             <div key={item.id} className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-center gap-6">
@@ -94,7 +93,6 @@ const Cart: React.FC = () => {
           </button>
         </div>
 
-        {/* Order Summary */}
         <div className="lg:col-span-1">
           <div className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-xl sticky top-24">
             <h3 className="text-xl font-bold text-gray-900 mb-8 border-b border-gray-100 pb-4">Order Summary</h3>
@@ -132,10 +130,6 @@ const Cart: React.FC = () => {
               Complete Wholesale Order
               <i className="fa-solid fa-arrow-right ml-3"></i>
             </button>
-            
-            <p className="text-[10px] text-gray-400 text-center mt-6 font-medium leading-relaxed uppercase tracking-tighter">
-              By placing this order, you agree to WholeX's <br/> wholesale terms & international shipping policies.
-            </p>
           </div>
         </div>
       </div>

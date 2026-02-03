@@ -14,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <script>
-    // Intermediate developer: explicit configuration for brand colors and fonts
     tailwind.config = {
       theme: {
         extend: {
@@ -42,7 +41,6 @@
       }
     }
     @layer components {
-      /* Clean, standard component styles */
       .standard-card-hover {
         @apply transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-md border border-slate-200 bg-white;
       }
@@ -55,7 +53,6 @@
     }
   </style>
 
-  <!-- Clean Import Map: Fixed overlap issue that caused blank pages -->
   <script type="importmap">
 {
   "imports": {
@@ -71,7 +68,6 @@
 </head>
 <body>
   <div id="root"></div>
-  <!-- Root entry point for the application -->
   <script type="module" src="./index.tsx"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { useApp } from '../App';
-import { UserRole } from '../types';
+import { useApp } from '../App.tsx';
+import { UserRole } from '../types.ts';
 
 const Auth: React.FC = () => {
   const { setUser, setCurrentPage } = useApp();
@@ -10,7 +10,6 @@ const Auth: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate auth with demo data
     setUser({
       id: 'usr-' + Date.now(),
       name: 'Demo Partner',
@@ -82,7 +81,6 @@ const Auth: React.FC = () => {
           <div>
             <div className="flex justify-between mb-2">
               <label className="text-xs font-bold text-gray-500 uppercase">Password</label>
-              {mode === 'login' && <button className="text-[10px] font-bold text-blue-600 hover:underline">Forgot password?</button>}
             </div>
             <input 
               type="password" required 
@@ -98,13 +96,6 @@ const Auth: React.FC = () => {
             {mode === 'login' ? 'Sign In to Marketplace' : 'Create My Account'}
           </button>
         </form>
-
-        <div className="mt-8 pt-6 border-t border-gray-100 text-center">
-          <p className="text-xs text-gray-400">
-            For support regarding B2B accounts, please email <br/>
-            <span className="text-blue-600 cursor-pointer">partners@wholex.com</span>
-          </p>
-        </div>
       </div>
     </div>
   );

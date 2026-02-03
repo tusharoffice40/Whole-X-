@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { useApp } from '../App';
-import { MOCK_PRODUCTS } from '../constants';
-import { generateProductDescription, getMarketInsight } from '../services/gemini';
+import { useApp } from '../App.tsx';
+import { MOCK_PRODUCTS } from '../constants.tsx';
+import { generateProductDescription, getMarketInsight } from '../services/gemini.ts';
 
 interface ProductDetailProps {
   id: string;
@@ -16,7 +16,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
   const [loadingAi, setLoadingAi] = useState(false);
   const [aiContent, setAiContent] = useState<{desc: string, insight: string} | null>(null);
 
-  // Sync quantity with MOQ when product changes
   useEffect(() => {
     if (product) setQuantity(product.moq);
   }, [product]);
@@ -39,7 +38,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      {/* Breadcrumb / Back button */}
       <button 
         onClick={() => setCurrentPage('shop')}
         className="text-sm font-semibold text-blue-600 mb-8 flex items-center hover:underline"
@@ -48,7 +46,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
       </button>
 
       <div className="flex flex-col lg:flex-row gap-12 bg-white p-8 rounded border border-gray-200 shadow-sm">
-        {/* Left: Image & Thumbnails */}
         <div className="lg:w-1/2">
           <div className="bg-gray-50 rounded overflow-hidden mb-4 border border-gray-100">
             <img src={product.image} className="w-full h-[500px] object-cover" alt={product.name} />
@@ -62,7 +59,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
           </div>
         </div>
 
-        {/* Right: Product Details */}
         <div className="lg:w-1/2 flex flex-col">
           <div className="mb-6">
             <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded uppercase mb-4 inline-block">{product.category}</span>
@@ -120,7 +116,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
             <p className="text-gray-600 leading-relaxed text-sm">{product.description}</p>
           </div>
 
-          {/* AI Helper - Clean Intermediate Integration */}
           <div className="bg-gray-50 border border-gray-200 rounded p-6">
             <div className="flex items-center justify-between mb-4">
               <h4 className="text-sm font-bold text-gray-800 flex items-center">
