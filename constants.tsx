@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Product, Category, User, UserRole } from './types';
+import { Product, Category, User, UserRole } from './types.ts';
 
 export const CATEGORIES: Category[] = [
   { id: '1', name: 'Clothing', icon: 'fa-shirt' },

@@ -1,14 +1,14 @@
 
 import React, { useState, useMemo, createContext, useContext } from 'react';
-import { User, UserRole, Product, CartItem, Order } from './types';
-import { MOCK_PRODUCTS, DEFAULT_USER } from './constants';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import ProductDetail from './pages/ProductDetail';
-import Cart from './pages/Cart';
-import Dashboard from './pages/Dashboard';
-import Auth from './pages/Auth';
+import { User, UserRole, Product, CartItem, Order } from './types.ts';
+import { MOCK_PRODUCTS, DEFAULT_USER } from './constants.tsx';
+import Navbar from './components/Navbar.tsx';
+import Home from './pages/Home.tsx';
+import Shop from './pages/Shop.tsx';
+import ProductDetail from './pages/ProductDetail.tsx';
+import Cart from './pages/Cart.tsx';
+import Dashboard from './pages/Dashboard.tsx';
+import Auth from './pages/Auth.tsx';
 
 // Context for global state
 interface AppContextType {
